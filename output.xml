@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.8 on win32)" generated="2024-12-06T12:57:14.278964" rpa="false" schemaversion="5">
+<suite id="s1" name="Shopee test" source="C:\Users\AdminTak\Desktop\ไฟล์งานคอมเก่า\งานมิ้นท์\Shopee Automated\TestCase\Shopee_test.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-12-06T12:57:14.877229" level="INFO">Opening browser 'firefox' to base url 'https://shopee.co.th/ Chrome'.</msg>
+<arg>${URL} Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T12:57:14.877229" elapsed="31.240119"/>
+</kw>
+<test id="s1-t1" name="Scenario A: Verify landing on Shopee home page with EN language" line="15">
+<kw name="Open Shopee Website" owner="keywords_test">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T12:57:46.123907" level="INFO">${URL} = </msg>
+<var>${URL}</var>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T12:57:46.122907" elapsed="0.001000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T12:57:46.124906" level="INFO">Opening browser 'Chrome' to base url ''.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T12:57:46.123907" elapsed="2.472226"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-06T12:57:48.596133" elapsed="0.060267"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T12:57:50.657460" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T12:57:48.656400" elapsed="2.001060"/>
+</kw>
+<msg time="2024-12-06T12:57:50.657460" level="INFO">${variable} = None</msg>
+<var>${variable}</var>
+<status status="PASS" start="2024-12-06T12:57:46.121904" elapsed="4.535556"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-12-06T12:57:50.667502" level="INFO">${url} = data:,</msg>
+<var>${url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-12-06T12:57:50.657460" elapsed="0.010042"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-12-06T12:57:50.669013" level="FAIL">data:, != https://shopee.co.th/</msg>
+<arg>${url}</arg>
+<arg>https://shopee.co.th/</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="FAIL" start="2024-12-06T12:57:50.667502" elapsed="0.001511">data:, != https://shopee.co.th/</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@alt="shopee logo"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:50.669013" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-06T12:57:46.119894" elapsed="4.550144">data:, != https://shopee.co.th/</status>
+</test>
+<test id="s1-t2" name="Scenario B: Search for keywords “baby toys”" line="21">
+<kw name="Search For Product" owner="keywords_test">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T12:57:50.673038" level="INFO">Typing text 'baby toys' into text field 'xpath=//input[@type="search"]'.</msg>
+<msg time="2024-12-06T12:57:50.823249" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-06T12:57:50.823249" level="FAIL">Element with locator 'xpath=//input[@type="search"]' not found.</msg>
+<arg>xpath=//input[@type="search"]</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-12-06T12:57:50.673038" elapsed="0.157747">Element with locator 'xpath=//input[@type="search"]' not found.</status>
+</kw>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//input[@type="search"]</arg>
+<arg>ENTER</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:50.830785" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:50.830785" elapsed="0.000000"/>
+</kw>
+<arg>${SEARCH_TERM}</arg>
+<status status="FAIL" start="2024-12-06T12:57:50.673038" elapsed="0.157747">Element with locator 'xpath=//input[@type="search"]' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder="Search for products, brands and shops"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:50.831788" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder="Search for products, brands and shops"]</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:50.831788" elapsed="0.000000"/>
+</kw>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder="Search for products, brands and shops"]</arg>
+<arg>ENTER</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:50.831788" elapsed="0.001001"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:50.832789" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-06T12:57:50.672041" elapsed="0.160748">Element with locator 'xpath=//input[@type="search"]' not found.</status>
+</test>
+<test id="s1-t3" name="Scenario C: Display search result as a list" line="28">
+<kw name="Verify Search Results Are Displayed" owner="keywords_test">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-12-06T12:57:55.984661" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-06T12:57:55.985663" level="FAIL">Element 'xpath=//div[contains(@class, 'shopee-search-item-result__item')]' not visible after 5 seconds.</msg>
+<arg>xpath=//div[contains(@class, 'shopee-search-item-result__item')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-12-06T12:57:50.835788" elapsed="5.151873">Element 'xpath=//div[contains(@class, 'shopee-search-item-result__item')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'shopee-search-item-result__item')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:55.987661" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-06T12:57:50.834788" elapsed="5.153873">Element 'xpath=//div[contains(@class, 'shopee-search-item-result__item')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//section[@class="shopee-search-item-result"])]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:55.988661" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//section[@class="shopee-search-item-result"])]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2024-12-06T12:57:55.990088" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-06T12:57:50.833789" elapsed="5.157595">Element 'xpath=//div[contains(@class, 'shopee-search-item-result__item')]' not visible after 5 seconds.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-06T12:57:55.995385" elapsed="2.312067"/>
+</kw>
+<status status="FAIL" start="2024-12-06T12:57:14.281056" elapsed="44.026396"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="Shopee test">Shopee test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
